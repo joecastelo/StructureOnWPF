@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructureOnWPF", "StructureOnWPF.csproj", "{8A6E8A7B-1B4E-4479-BC56-0E2B0634B535}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A6E8A7B-1B4E-4479-BC56-0E2B0634B535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A6E8A7B-1B4E-4479-BC56-0E2B0634B535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A6E8A7B-1B4E-4479-BC56-0E2B0634B535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A6E8A7B-1B4E-4479-BC56-0E2B0634B535}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28ACD549-9B0F-429F-8D79-152FDDD21B75}
+	EndGlobalSection
+EndGlobal
