@@ -80,13 +80,13 @@ namespace StructureOnWPF
         {
             var imageRes = SS.Image.ZRes;
 
-            return Convert.ToInt32((z) - SS.Image.Origin.z / imageRes);
+            return Convert.ToInt32((z - SS.Image.Origin.z) / imageRes);
         }
         public int GetSlice(double z)
         {
             var imageRes = SS.Image.ZRes;
 
-            return Convert.ToInt32((z) - SS.Image.Origin.z / imageRes);
+            return Convert.ToInt32((z - SS.Image.Origin.z) / imageRes);
         }
         public static double PlaneToCentimeters(int plane, Image image3D)
         {
@@ -112,6 +112,33 @@ namespace StructureOnWPF
                 }
             }
             return copy;
+
+
+        }
+        public SegmentVolume CovertToDefaultAccuracySegment()
+        {
+            if (Structure.IsHighResolution)
+            {
+                var placeholder = SS.AddStructure("CONTROL", "placeholder" + new Random().Next(0, 20));
+                foreach (var cc in Contours)
+                {
+                    var contoursOnPlane = cc.Value;
+                    var moved = contoursOnPlane.Select(e => e.ToArray()).ToArray();
+                    foreach (var vector in moved)
+                    {
+                        placeholder.AddContourOnImagePlane(vector, cc.Key);
+                    }
+                }
+                var seg = placeholder.SegmentVolume;
+                SS.RemoveStructure(placeholder);
+                //Contours = OriginalContours;
+                return seg;
+            }
+            else
+            {
+                return Structure.SegmentVolume;
+            }
+
 
 
         }
